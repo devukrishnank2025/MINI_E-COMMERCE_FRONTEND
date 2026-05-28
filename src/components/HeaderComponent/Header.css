@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@source "./**/*.{js,jsx,ts,tsx}";
+
+/* Move your resets here so they don't block Tailwind's padding/margin */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}

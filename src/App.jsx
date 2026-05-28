@@ -1,12 +1,26 @@
 import { useState } from 'react'
+import ProductForm from './components/FormComponent/ProductForm'
+import ProductView from './components/ProductsView/ProductView'
+import {BrowserRouter,Route,Routes} from "react-router-dom"
+import Design from './components/DesignComponent/Design'
+import Header from './components/HeaderComponent/Header'
+import Footer from './components/FooterComponent/Footer'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-      hii this is a new vite project
+    <BrowserRouter>
+    <Header/>
+      <Routes>
+        <Route path="/" element={<ProductView/>}/>
+        <Route path="/addProduct" element={<ProductForm/>}/>
+        <Route path="/design" element={<Design/>}/>
+      </Routes>
+      <Footer></Footer>
+    </BrowserRouter>
     </>
   )
 }
