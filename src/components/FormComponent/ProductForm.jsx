@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import "./ProductForm.css"
 import { addProduct } from '../../../Redux/features/productSlice';
 import { useFormik } from "formik"
 import { productValidationSchema } from "../../../Validation/ProjuctFormValidation"
 import { ToastContainer, toast } from 'react-toastify';
+import Loading from '../LoadingComponent/Loading';
 
 function ProductForm() {
 
@@ -14,6 +15,8 @@ function ProductForm() {
   });
   const [selectedFile, setSelectedFile] = useState();
   const [preview, setPreview] = useState();
+
+  const {loading}=useSelector((state) => state.app)
 
 
   useEffect(() => {
@@ -93,6 +96,11 @@ function ProductForm() {
     touched[field] && errors[field]
       ? <span className="text-[10px] text-rose-500 !mt-0.5 !ml-0.5 block">{errors[field]}</span>
       : null;
+
+      if(loading) {
+    return <Loading/>
+}
+
 
   return (
     <div className="w-full h-[calc(100vh-100px)] flex items-center justify-center bg-gray-100 !px-4 overflow-y-auto !py-4">

@@ -3,11 +3,12 @@ import "./ProductView.css"
 import { useDispatch, useSelector } from "react-redux";
 import { readProduct, setCategory, setPageNo, setSort } from "../../../Redux/features/productSlice";
 import { ToastContainer, toast } from 'react-toastify';
+import Loading from '../LoadingComponent/Loading';
 const baseUrl = import.meta.env.VITE_API_URL
 function ProductView() {
 
     const dispatch = useDispatch()
-    let { products, totalPageNo, search, category, sort, pageNo } = useSelector((state) => state.app)
+    let { products, totalPageNo, search, category, sort, pageNo, loading } = useSelector((state) => state.app)
 
     useEffect(() => {
         dispatch(readProduct({ pageNo, search, sort, category }))
@@ -19,6 +20,9 @@ function ProductView() {
         dispatch(setSort(""))
         dispatch(setCategory(""))
     }
+    if(loading) {
+    return <Loading/>
+}
 
     return (
         <>
