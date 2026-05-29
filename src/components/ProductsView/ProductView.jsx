@@ -3,15 +3,16 @@ import "./ProductView.css"
 import { useDispatch, useSelector } from "react-redux";
 import { readProduct, setCategory, setPageNo, setSort } from "../../../Redux/features/productSlice";
 import { ToastContainer, toast } from 'react-toastify';
-
+const baseUrl = import.meta.env.VITE_API_URL
 function ProductView() {
 
     const dispatch = useDispatch()
-    const { products, totalPageNo, search, category, sort, pageNo } = useSelector((state) => state.app)
+    let { products, totalPageNo, search, category, sort, pageNo } = useSelector((state) => state.app)
 
     useEffect(() => {
         dispatch(readProduct({ pageNo, search, sort, category }))
         console.log(pageNo, search, sort, category);
+        
     }, [pageNo, search, sort, category])
 
     const onReset = () => {
@@ -103,8 +104,14 @@ function ProductView() {
                     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 !gap-4 lg:!gap-5'>
 
                         {products.map((product) => {
+
+                            console.log(`https://mini-e-commerce-backend-jmh4.onrender.com/ProductImages/${product.image}`);
+                            
                             const discountedPrice = Math.ceil(
                                 (product.price * (100 - product.discount)) / 100
+
+
+
                             );
                             return (
                                 <div
@@ -114,7 +121,7 @@ function ProductView() {
                                     {/* Image */}
                                     <div className='relative h-[160px] sm:h-[175px] lg:h-[185px] overflow-hidden'>
                                         <img
-                                            src={`http://localhost:3000/productImages/${product.image}`}
+                                            src={`https://mini-e-commerce-backend-jmh4.onrender.com/ProductImages/${product.image}`}
                                             alt={product.name}
                                             className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-500'
                                         />
