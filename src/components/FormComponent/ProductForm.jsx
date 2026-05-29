@@ -121,7 +121,7 @@ function ProductForm() {
           </div>
 
           <div className="flex-1 float-animation flex justify-center items-center min-h-0">
-            <img src="/images/imageRobo.png" alt="AI Robot" className="w-44 max-h-full object-contain drop-shadow-2xl" />
+            <img src="/images/imageRobo.webp" alt="AI Robot" className="w-44 max-h-full object-contain drop-shadow-2xl" />
           </div>
 
           <div className="flex flex-col !gap-2 shrink-0">
