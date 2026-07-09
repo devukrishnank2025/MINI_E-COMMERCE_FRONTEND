@@ -109,6 +109,8 @@ function ProductView() {
 
                         {products.map((product) => {
 
+                           
+
                             console.log(`https://mini-e-commerce-backend-jmh4.onrender.com/ProductImages/${product.image}`);
                             
                             const discountedPrice = Math.ceil(
@@ -125,7 +127,7 @@ function ProductView() {
                                
                                     <div className='relative h-[160px] sm:h-[175px] lg:h-[185px] overflow-hidden'>
                                         <img
-                                            src={`https://mini-e-commerce-backend-jmh4.onrender.com/ProductImages/IMG_2881.JPG`}
+                                            src={`https://mini-e-commerce-backend-jmh4.onrender.com/ProductImages/${product.image.toUpperCase()}`}
                                             alt={product.name}
                                             className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-500'
                                         />
