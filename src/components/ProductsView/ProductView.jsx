@@ -109,7 +109,7 @@ function ProductView() {
 
                         {products.map((product) => {
 
-                            console.log(`${baseUrl}${product.image}`);
+                            console.log(`https://mini-e-commerce-backend-jmh4.onrender.com/ProductImages/${product.image}`);
                             
                             const discountedPrice = Math.ceil(
                                 (product.price * (100 - product.discount)) / 100
@@ -125,7 +125,7 @@ function ProductView() {
                                
                                     <div className='relative h-[160px] sm:h-[175px] lg:h-[185px] overflow-hidden'>
                                         <img
-                                            src={`${baseUrl}ProductImages/${product.image}`}
+                                            src={`https://mini-e-commerce-backend-jmh4.onrender.com/ProductImages/${product.image}`}
                                             alt={product.name}
                                             className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-500'
                                         />
