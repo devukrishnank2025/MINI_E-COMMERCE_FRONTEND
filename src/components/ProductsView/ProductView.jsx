@@ -28,7 +28,7 @@ function ProductView() {
         <>
             <div className='w-full min-h-screen bg-gray-50 flex flex-col lg:flex-row !gap-4 lg:!gap-6 !px-12 sm:!px-20 md:!px-8 lg:!px-6 !py-4 sm:!py-5 lg:!py-6'>
 
-                {/* Sidebar */}
+                
                 <div className='w-full lg:w-[20%] lg:shrink-0'>
                     <div className='bg-white rounded-2xl shadow-sm border border-gray-100 !p-4 sm:!p-5 lg:!p-6 lg:sticky lg:top-6'>
 
@@ -36,10 +36,10 @@ function ProductView() {
                             Filters
                         </h2>
 
-                        {/* Sort + Category row on mobile, stacked on desktop */}
+                       
                         <div className='flex flex-col sm:flex-row lg:flex-col !gap-4 lg:!gap-0'>
 
-                            {/* Sort */}
+                          
                             <div className='flex-1 !mb-0 lg:!mb-5'>
                                 <label htmlFor='sortselect' className='block text-xs font-semibold text-gray-500 uppercase tracking-wider !mb-2'>
                                     Sort By
@@ -57,7 +57,7 @@ function ProductView() {
                                 </select>
                             </div>
 
-                            {/* Category */}
+                           
                             <div className='flex-1 !mb-0 lg:!mb-6'>
                                 <label htmlFor='categoryselect' className='block text-xs font-semibold text-gray-500 uppercase tracking-wider !mb-2'>
                                     Category
@@ -91,10 +91,10 @@ function ProductView() {
                     </div>
                 </div>
 
-                {/* Product Grid */}
+                
                 <div className='flex-1'>
 
-                    {/* Tagline */}
+                    
                     <div className='flex items-center !gap-2 !mb-4 lg:!mb-5'>
                         <div className='w-1 h-5 rounded-full bg-gradient-to-b from-rose-500 to-violet-600'></div>
                         <p className='text-xs sm:text-sm font-medium text-gray-400 !m-0'>
@@ -122,20 +122,20 @@ function ProductView() {
                                     key={product._id}
                                     className='bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group'
                                 >
-                                    {/* Image */}
+                               
                                     <div className='relative h-[160px] sm:h-[175px] lg:h-[185px] overflow-hidden'>
                                         <img
-                                            src={`https://mini-e-commerce-backend-jmh4.onrender.com/ProductImages/${product.image}`}
+                                            src={`http://localhost:3000/ProductImages/${product.image}`}
                                             alt={product.name}
                                             className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-500'
                                         />
 
-                                        {/* Discount badge */}
+                                       
                                         <div className='absolute top-2 left-2 bg-white/90 text-rose-500 text-[11px] font-bold !px-2 !py-0.5 rounded-full shadow-sm'>
                                             {product.discount}% <span className='text-[9px]'>OFF</span>
                                         </div>
 
-                                        {/* Action buttons */}
+                                       
                                         <div className='absolute top-2 right-2 flex flex-col !gap-1.5'>
                                             <button onClick={()=> toast(`Thanks For Love ❤️❤️. Love You too 😍`, {position: "top-center",autoClose: 1000})} className='w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-400 hover:bg-rose-500 hover:text-white transition'>
                                                 <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth='2' stroke='currentColor' className='w-4 h-4'>
@@ -151,7 +151,7 @@ function ProductView() {
                                         </div>
                                     </div>
 
-                                    {/* Info */}
+                                
                                     <div className='!p-3 sm:!p-4'>
                                         <p className='text-[11px] font-bold uppercase tracking-widest text-rose-500 !mb-1'>
                                             {product.brand}
@@ -186,7 +186,7 @@ function ProductView() {
             </div>
              <ToastContainer />
 
-            {/* Pagination */}
+           
             <div className='flex flex-wrap items-center justify-center !gap-2 !py-6 sm:!py-8'>
 
                 <button

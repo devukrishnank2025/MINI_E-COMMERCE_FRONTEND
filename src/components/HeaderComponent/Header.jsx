@@ -12,7 +12,7 @@ function Header() {
     return (
         <div className="w-full h-20 bg-white shadow-md flex items-center justify-between !px-4 md:!px-8 relative">
 
-            {/* Logo */}
+           
             <Link to="/">
                 <div className="text-3xl font-bold">
                     <span className="inline-block text-gray-900 !mr-1">SMART</span>
@@ -20,7 +20,7 @@ function Header() {
                 </div>
             </Link>
 
-            {/* Search — hidden on small screens */}
+            
             <div className="hidden md:flex flex-1 max-w-xl !mx-10">
                 <input
                     onChange={(e) => dispatch(setSearch(e.target.value))}
@@ -30,7 +30,7 @@ function Header() {
                 />
             </div>
 
-            {/* Icons + Buttons — hidden on small screens */}
+            
             <div className="hidden md:flex items-center gap-6">
                 <button className="relative text-gray-700 hover:text-red-500 transition">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6">
@@ -55,29 +55,29 @@ function Header() {
                 </Link>
             </div>
 
-            {/* Hamburger button — visible only on small screens */}
+            
             <button
                 className="md:hidden text-gray-700 focus:outline-none"
                 onClick={() => setMenuOpen(!menuOpen)}
             >
                 {menuOpen ? (
-                    // X icon
+                  
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 ) : (
-                    // Hamburger icon
+                   
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
                 )}
             </button>
 
-            {/* Floating Mobile Menu */}
+        
             {menuOpen && (
                 <div className="md:hidden absolute top-20 left-0 w-full bg-white shadow-lg z-50 flex flex-col gap-4 !px-6 !py-5">
                     
-                    {/* Search */}
+                 
                     <input
                         onChange={(e) => dispatch(setSearch(e.target.value))}
                         type="text"
@@ -85,7 +85,7 @@ function Header() {
                         className="w-full !px-4 !py-2 border border-gray-300 rounded-full outline-none focus:ring-2 focus:ring-pink-500"
                     />
 
-                    {/* Icons row */}
+                    
                     <div className="flex items-center gap-6">
                         <button className="relative text-gray-700 hover:text-red-500 transition flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6">
@@ -103,7 +103,7 @@ function Header() {
                         </button>
                     </div>
 
-                    {/* Buttons */}
+                  
                     <div className="flex flex-col gap-3">
                         <Link to="/design" onClick={() => setMenuOpen(false)}>
                             <button className="w-full !px-5 !py-2 border border-gray-300 rounded-lg hover:bg-gray-100 transition">Log In</button>

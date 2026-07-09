@@ -91,7 +91,7 @@ function ProductForm() {
 
 
 
-  // helper — only show after field is touched
+ 
   const Err = ({ field }) =>
     touched[field] && errors[field]
       ? <span className="text-[10px] text-rose-500 !mt-0.5 !ml-0.5 block">{errors[field]}</span>
@@ -106,7 +106,7 @@ function ProductForm() {
     <div className="w-full h-[calc(100vh-100px)] flex items-center justify-center bg-gray-100 !px-4 overflow-y-auto !py-4">
       <div className="bg-white w-full max-w-4xl flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-xl md:h-[90%] my-auto">
 
-        {/* Left Side — desktop only */}
+       
         <ToastContainer />
         <div className="hidden md:flex w-[36%] h-full bg-gradient-to-b from-rose-600 via-rose-500 to-violet-600 flex-col !p-7">
 
@@ -144,10 +144,10 @@ function ProductForm() {
           </div>
         </div>
 
-        {/* Right Side */}
+       
         <div className="w-full md:w-[64%] md:h-full flex flex-col justify-center !px-5 md:!px-8 !py-5 md:overflow-y-auto">
 
-          {/* Mobile header */}
+          
           <div className="flex md:hidden items-center justify-between !mb-4">
             <div className="flex items-center !gap-2">
               <div className="w-7 h-7 rounded-full bg-gradient-to-br from-rose-500 to-violet-600 flex items-center justify-center">
@@ -175,7 +175,7 @@ function ProductForm() {
 
             <div className="grid grid-cols-2 !gap-x-2 !gap-y-1">
 
-              {/* Name */}
+              
               <div className="flex flex-col">
                 <input
                   type="text" name="name" value={product.name} onChange={handleChange} placeholder="Product Name"
@@ -184,7 +184,7 @@ function ProductForm() {
                 <Err field="name" />
               </div>
 
-              {/* Brand */}
+              
               <div className="flex flex-col">
                 <input
                   type="text" name="brand" value={product.brand} onChange={handleChange} placeholder="Product Brand"
@@ -193,7 +193,7 @@ function ProductForm() {
                 <Err field="brand" />
               </div>
 
-              {/* Category */}
+            
               <div className="flex flex-col">
                 <select
                   name="category" value={product.category} onChange={handleChange}
@@ -210,7 +210,7 @@ function ProductForm() {
                 <Err field="category" />
               </div>
 
-              {/* Price */}
+              
               <div className="flex flex-col">
                 <input
                   type="text" name="price" value={product.price} onChange={handleChange} placeholder="Product Price"
@@ -219,7 +219,7 @@ function ProductForm() {
                 <Err field="price" />
               </div>
 
-              {/* Discount */}
+              
               <div className="flex flex-col">
                 <input
                   type="text" name="discount" value={product.discount} onChange={handleChange} placeholder="Discount (%)"
@@ -228,7 +228,7 @@ function ProductForm() {
                 <Err field="discount" />
               </div>
 
-              {/* Rating */}
+              
               <div className="flex flex-col">
                 <input
                   type="text" name="rating" value={product.rating} onChange={handleChange} placeholder="Rating (e.g. 4.5)"
@@ -237,7 +237,7 @@ function ProductForm() {
                 <Err field="rating" />
               </div>
 
-              {/* Purchased — full width */}
+            
               <div className="flex flex-col col-span-2">
                 <input
                   type="text" name="purchased" value={product.purchased} onChange={handleChange} placeholder="No. Purchased"
@@ -247,7 +247,7 @@ function ProductForm() {
               </div>
             </div>
 
-            {/* Description */}
+            
             <div className="flex flex-col">
               <textarea
                 name="description" value={product.description} onChange={handleChange}
@@ -257,10 +257,10 @@ function ProductForm() {
               <Err field="description" />
             </div>
 
-            {/* Image Upload + Preview */}
+          
             <div className="flex items-center !gap-3">
 
-              {/* File Input */}
+              
               <div className="flex-1 flex flex-col">
                 <label
                   className={`flex items-center !gap-2 border-2 border-dashed rounded-lg !px-3 !py-2 cursor-pointer transition
